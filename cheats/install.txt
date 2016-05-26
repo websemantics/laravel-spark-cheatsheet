@@ -1,0 +1,40 @@
+# Install Laravel and SPARK installers
+composer global require "laravel/installer"
+git clone http://github.com/laravel/spark-installer
+cd spark-installer
+composer install
+export PATH=$PATH:.composer/vendor/laravel/spark-installer
+
+# Register Github API Token (this will store the token here, .spark/config.json)
+spark register github-api-token
+
+# Create new application (Say 'no' to install npm packages and run gulp)
+spark new app
+
+# Install npm packages
+npm install
+
+# Run gulp
+gulp
+
+# Make artisan executable
+chmod 777 artisan
+
+# Create DB, homestead, .. use 'Sequel Pro'
+
+# Run migration
+./artisan migrate
+
+# Register a user
+app.dev/register
+
+# Link storage directory (so images are available on public/storage)
+ln -s storage/app/public public/storage
+
+# Setup team billing and or billing via braintree (optional)
+spark new project-name --braintree
+spark new project-name --team-billing
+spark new project-name --team-billing --braintree
+
+# Update SPARK
+php artisan spark:update

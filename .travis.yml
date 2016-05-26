@@ -1,0 +1,8 @@
+script: bash ./scripts.sh deploy
+language: node_js
+node_js:
+- '5'
+env:
+  global:
+  - GH_REF: github.com/websemantics/laravel-spark-cheatsheet.git
+  - secure: my8foxjrRZPyN1WNau+/fGc9QFScOxV2l++PqiUuTUBsK9OaancbvE3LSIjgKWlAK5wRqpT2aS+GaXKZn+gwSbkP3hvFGFBB0Xm9ZiPwjq2p5tyfF8Hz4IwPEhbh9dilL39WdkE0N0QNCB4WZKwwN9vvx039jnOOozOnkSH0+If0w8HrMIVcZGziNomKKbKlpSiY/JpWqVZ+CsrcFsFAx0FlaGRTylA+pW1ZuRJ7Db9mTP1MXKRI+kxhxlmkUQ2s+ggpdqsNBO1yWVI3yT29ycYn2d+enRWFW8rFIp4gme9HKzl/ara4MrHxOnlfI/CNXcjej1zn6fidPYVV38Ae+YqxeM59qmP1D4GaNbTPrOnIh3sDW/icRkrjiBkLYayIgkFC2F6POjgHuobS+EdvL/477d9kOp1TBFFjD6zWGwPDSQ1lh43fSIbq1KAwzd9sEpbP5XOXkG0ZeuBBpHs0RmftMF89oWpLUZH802wnm06WksLYf10BFrTR96dX2O66nu8EINkvrcc6Ps5QwxRfXK5NjZL6eh89+a1VenUUTnY6ggZZgTPq73mlrFIAWhp7FSLovr+35DZ3TCi0nGR9mbOlNGEALqzjD4NLa0gOs1fbxQr1KIjCPeWLlB+eimkU8l4O/EYvZOpgprKnyJOhwVQrqwHUc+gBFolx4CE1DKs=
