@@ -9,7 +9,7 @@
     "url": "git://github.com/websemantics/laravel-spark-cheatsheet.git"
   },
   "scripts": {
-    "postinstall" : "./scripts.sh install",
+    "postinstall" : "./scripts.sh postinstall",
     "build" : "gulp",
     "deploy" : "./scripts.sh deploy"
   },

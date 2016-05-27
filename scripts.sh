@@ -8,24 +8,38 @@ BASEDIR=$(cd $(dirname $0) && pwd)
 # Read the entered command
 command=${1:-empty}
 
+prepare ()
+{ # prepare for semantic-ui
+	printf '%s\n' "Create semantic.json file and semantic folder for quite semantic-ui install"
+	mkdir -p "$BASEDIR/semantic/src/definitions"
+	echo '' > "$BASEDIR/semantic/src/theme.config"
+	echo '{"base":"semantic/","paths":{"source":{"config":"src/theme.config","definitions":"src/definitions/","site":"src/site/","themes":"src/themes/"},"output":{"packaged":"dist/","uncompressed":"dist/components/","compressed":"dist/components/","themes":"dist/themes/"},"clean":"dist/"},"permission":false,"rtl":false}' > "$BASEDIR/semantic.json"
+}
+
 if [ $command == preinstall ]
 	then
 
 		# -----------------------------------------------------------------
-		# (1) pre-install, setup semantic-ui
+		# (1) pre-install,
 		# -----------------------------------------------------------------
 
-		printf '%s\n' "Create semantic.json file and semantic folder for quite semantic-ui install"
-
-		mkdir -p "$BASEDIR/semantic/src/definitions"
-		echo '' > "$BASEDIR/semantic/src/theme.config"
-		echo '{"base":"semantic/","paths":{"source":{"config":"src/theme.config","definitions":"src/definitions/","site":"src/site/","themes":"src/themes/"},"output":{"packaged":"dist/","uncompressed":"dist/components/","compressed":"dist/components/","themes":"dist/themes/"},"clean":"dist/"},"permission":false,"rtl":false}' > "$BASEDIR/semantic.json"
+		prepare
 
 elif [ $command == install ]
 	then
 
 		# -----------------------------------------------------------------
-		# (2) install, link with semantic-ui less styles
+		# (2) install,
+		# -----------------------------------------------------------------
+
+		prepare
+		npm install
+
+elif [ $command == postinstall ]
+	then
+
+		# -----------------------------------------------------------------
+		# (3) postinstall, link with semantic-ui less styles
 		# -----------------------------------------------------------------
 
     printf '%s\n' "Create semantic-ui theme config file @ node_modules/semantic-ui/src/theme.config"
@@ -38,7 +52,7 @@ elif [ $command == deploy ]
 	then
 
     # ---------------------------------------------------------------------------
-		# (3) Deploy, the following bash will deploy this app to the repo gh-page
+		# (4) Deploy, the following bash will deploy this app to the repo gh-page
 		# ---------------------------------------------------------------------------
 
 		npm run build
@@ -63,8 +77,8 @@ elif [ $command == deploy ]
   else
 
 		# -----------------------------------------------------------------
-		# (3) Nothing, show something .. anything ..
+		# (5) Nothing, show something .. anything ..
 		# -----------------------------------------------------------------
 
-		printf '%s\n%s\n' "Please type a valid command option:" "(1) preinstall, (2) install  or (3) deploy"
+		printf '%s\n%s\n' "Please type a valid command option:" "(1) preinstall, (2) install, (3) postinstall  or (4) deploy"
 fi

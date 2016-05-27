@@ -22,7 +22,7 @@
 
 > A list of commands and features for [Laravel Spark](https://spark.laravel.com/).
 
-### [Demo](http://websemantics.github.io/laravel-spark-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/laravel-spark-cheatsheet/issues)
+### [Live](http://websemantics.github.io/laravel-spark-cheatsheet)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/laravel-spark-cheatsheet/issues)
 
 ## Install
 
@@ -30,9 +30,9 @@ Clone this repo and install all Node.js packages, and configure Semantic-ui for 
 
 ``` bash
 # install dependencies
-./scripts preinstall
-npm install
+./scripts.sh install
 ```
+
 ## Build
 
 The build process will populate the `public` folder with javascript and css files.
