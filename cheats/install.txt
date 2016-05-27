@@ -5,13 +5,14 @@ cd spark-installer
 composer install
 export PATH=$PATH:.composer/vendor/laravel/spark-installer
 
-# Register Github API Token (this will store the token here, .spark/config.json)
-spark register github-api-token
+# Register Github API Token (this will store the token @ '.spark/config.json')
+spark register *-github-api-token-*
 
 # Create new application (Say 'no' to install npm packages and run gulp)
 spark new app
 
 # Install npm packages
+cd app
 npm install
 
 # Run gulp
@@ -20,7 +21,8 @@ gulp
 # Make artisan executable
 chmod 777 artisan
 
-# Create DB, homestead, .. use 'Sequel Pro'
+# Create DB, homestead
+use 'Sequel Pro'
 
 # Run migration
 ./artisan migrate
