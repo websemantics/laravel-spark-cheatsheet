@@ -30,7 +30,12 @@ elif [ $command == deploy ]
 		# (2) Deploy, the following bash will deploy this app to the repo gh-page
 		# ---------------------------------------------------------------------------
 
-		npm install
+		npm install <<EOF
+yes
+
+yes
+
+EOF
 		npm run build
 
     # Create a new Git repo in public folder
