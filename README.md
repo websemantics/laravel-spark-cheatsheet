@@ -1,18 +1,18 @@
 ```                 
-               /|             Laravel Spark
-             /  |             __  __ __    ___   ____  ______
-           /    |            /  ]|  |  |  /  _] /    ||      |
-         /      |           /  / |  |  | /  [_ |  o  ||      |
-       /        |          /  /  |  _  ||    _]|     ||_|  |_|
-     /        __|_______  /   \_ |  |  ||   [_ |  _  |  |  |
-   /                  /   \     ||  |  ||     ||  |  |  |  |
- /___________       /      \____||__|__||_____||__|__|__|__|
-       |          /        / ___/|  |  |  /  _]  /  _]      |
-      _|        /         (   \_ |  |  | /  [_  /  [_|      |
-    /  |      /            \__  ||  _  ||    _]|    _]_|  |_|
-    \ _| _  / _ _          /  \ ||  |  ||   [_ |   [_  |  |
-       |  /      _\/       \    ||  |  ||     ||     | |  |
-       |/                   \___||__|__||_____||_____| |__|
+               /|              
+             /  |              __  __ __    ___   ____  ______
+           /    |             /  ]|  |  |  /  _] /    ||      |
+         /      |            /  / |  |  | /  [_ |  o  ||      |
+       /        | Laravel   /  /  |  _  ||    _]|     ||_|  |_|
+     /        __|_______   /   \_ |  |  ||   [_ |  _  |  |  |
+   /                  /    \     ||  |  ||     ||  |  |  |  |
+ /___________       /       \____||__|__||_____||__|__|__|__|
+       |          /         / ___/|  |  |  /  _]  /  _]      |
+      _|        /          (   \_ |  |  | /  [_  /  [_|      |
+    /  |      /             \__  ||  _  ||    _]|    _]_|  |_|
+    \ _| _  / _ _           /  \ ||  |  ||   [_ |   [_  |  |
+       |  /      _\/        \    ||  |  ||     ||     | |  |
+       |/                    \___||__|__||_____||_____| |__|
 
 ```
 
@@ -30,10 +30,9 @@ Clone this repo and install all Node.js packages, and configure Semantic-ui for 
 
 ``` bash
 # install dependencies
+./scripts preinstall
 npm install
 ```
-
-
 ## Build
 
 The build process will populate the `public` folder with javascript and css files.
@@ -42,7 +41,6 @@ The build process will populate the `public` folder with javascript and css file
 # compile resources
 gulp
 ```
-
 
 ## Credits
 

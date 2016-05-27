@@ -8,11 +8,24 @@ BASEDIR=$(cd $(dirname $0) && pwd)
 # Read the entered command
 command=${1:-empty}
 
-if [ $command == install ]
+if [ $command == preinstall ]
 	then
 
 		# -----------------------------------------------------------------
-		# (1) install, link with semantic-ui less styles
+		# (1) pre-install, setup semantic-ui
+		# -----------------------------------------------------------------
+
+		printf '%s\n' "Create semantic.json file and semantic folder for quite semantic-ui install"
+
+		mkdir -p "$BASEDIR/semantic/src/definitions"
+		echo '' > "$BASEDIR/semantic/src/theme.config"
+		echo '{"base":"semantic/","paths":{"source":{"config":"src/theme.config","definitions":"src/definitions/","site":"src/site/","themes":"src/themes/"},"output":{"packaged":"dist/","uncompressed":"dist/components/","compressed":"dist/components/","themes":"dist/themes/"},"clean":"dist/"},"permission":false,"rtl":false}' > "$BASEDIR/semantic.json"
+
+elif [ $command == install ]
+	then
+
+		# -----------------------------------------------------------------
+		# (2) install, link with semantic-ui less styles
 		# -----------------------------------------------------------------
 
     printf '%s\n' "Create semantic-ui theme config file @ node_modules/semantic-ui/src/theme.config"
@@ -25,16 +38,9 @@ elif [ $command == deploy ]
 	then
 
     # ---------------------------------------------------------------------------
-		# (2) Deploy, the following bash will deploy this app to the repo gh-page
+		# (3) Deploy, the following bash will deploy this app to the repo gh-page
 		# ---------------------------------------------------------------------------
 
-		printf '%s\n' "Create semantic.json file and semantic folder for quite semantic-ui install"
-
-		mkdir -p "$BASEDIR/semantic/src/definitions"
-		echo '' > "$BASEDIR/semantic/src/theme.config"
-		echo '{"base":"semantic/","paths":{"source":{"config":"src/theme.config","definitions":"src/definitions/","site":"src/site/","themes":"src/themes/"},"output":{"packaged":"dist/","uncompressed":"dist/components/","compressed":"dist/components/","themes":"dist/themes/"},"clean":"dist/"},"permission":false,"rtl":false}' > "$BASEDIR/semantic.json"
-
-		npm install
 		npm run build
 
     # Create a new Git repo in public folder
@@ -60,5 +66,5 @@ elif [ $command == deploy ]
 		# (3) Nothing, show something .. anything ..
 		# -----------------------------------------------------------------
 
-		printf '%s\n%s\n' "Please type a valid command option:" "(1) install  or (2)"
+		printf '%s\n%s\n' "Please type a valid command option:" "(1) preinstall, (2) install  or (3) deploy"
 fi
