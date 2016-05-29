@@ -1,0 +1,26 @@
+{
+  "title" : "Laravel Spark Cheat Sheet",
+  "repository" : "websemantics/laravel-spark-cheatsheet",
+  "lights" : true,
+  "comments" :  true,
+  "files" : [
+       {
+        "name" : "plugin.txt",
+        "title" : "Plugin",
+        "icon" : "puzzle",
+        "lang" : "bsh"
+       },
+       {
+        "name" : "package.txt",
+        "title" : "Package",
+        "icon" : "rocket",
+        "lang" : "bsh"
+      },
+      {
+       "name" : "install.txt",
+       "title" : "Installation",
+       "icon" : "download",
+       "lang" : "bsh"
+     }
+  ]
+}
